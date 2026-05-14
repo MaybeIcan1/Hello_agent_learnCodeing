@@ -1,4 +1,4 @@
-from llm import HelloAgentLLM
+from llm import HelloAgentsLLM
 import re
 from ReActAgentTools import ToolExecutor, search
 
@@ -23,7 +23,7 @@ History: {history}
 """
 
 class ReActAgent:
-    def __init__(self, llm_client: HelloAgentLLM, tool_executor: ToolExecutor, max_steps: int = 5):
+    def __init__(self, llm_client: HelloAgentsLLM, tool_executor: ToolExecutor, max_steps: int = 5):
         self.llm_client = llm_client
         self.tool_executor = tool_executor
         self.max_steps = max_steps
@@ -123,7 +123,7 @@ class ReActAgent:
 
 
 if __name__ == '__main__':
-    llm = HelloAgentLLM()
+    llm = HelloAgentsLLM()
     tool_executor = ToolExecutor()
     search_desc = "一个网页搜索引擎。当你需要回答关于时事、事实以及在你的知识库中找不到的信息时，应使用此工具。"
     tool_executor.registerTool("Search", search_desc, search)

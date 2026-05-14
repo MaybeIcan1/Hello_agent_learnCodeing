@@ -8,7 +8,7 @@ from typing import List, Dict, Any
 #加载.env文件中的环境变量
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
-class HelloAgentLLM:
+class HelloAgentsLLM:
     """
     为HelloAgent定制的LL客户端
     调用任何兼容OpenAI API的LLM服务都可以使用这个类进行封装，并默认流式响应
@@ -59,7 +59,7 @@ class HelloAgentLLM:
 #客户端使用示例
 if __name__ == "__main__":
     try:
-        llm_client = HelloAgentLLM()
+        llm_client = HelloAgentsLLM()
         messages = [
             {"role": "system", "content": "你是一个有帮助的助手。"},
             {"role": "user", "content": "请介绍一下HelloAgent是什么？"}
